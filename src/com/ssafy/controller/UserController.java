@@ -28,7 +28,7 @@ public class UserController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String action = request.getParameter("action");
-
+			System.out.println(action);
 		String path = "";
 		if ("mvjoin".equals(action)) {
 			path = "/user/join.jsp";
@@ -44,7 +44,8 @@ public class UserController extends HttpServlet {
 			redirect(request, response, path);
 		} else if ("login".equals(action)) {
 			path = login(request, response);
-			forward(request, response, path);
+//			forward(request, response, path);
+			redirect(request, response, path);
 		} else if ("logout".equals(action)) {
 			path = logout(request, response);
 			redirect(request, response, path);

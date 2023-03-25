@@ -74,7 +74,7 @@ public class UserDaoImpl implements UserDao {
 			conn = dbUtil.getConnection();
 			StringBuilder loginUser = new StringBuilder();
 			loginUser.append("select user_id, user_name \n");
-			loginUser.append("from user \n");
+			loginUser.append("from members \n");
 			loginUser.append("where user_id = ? and user_password = ? \n");
 			pstmt = conn.prepareStatement(loginUser.toString());
 			pstmt.setString(1, userId);
