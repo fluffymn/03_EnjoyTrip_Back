@@ -20,13 +20,13 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public int idCheck(String userId) throws Exception {
 		// TODO Auto-generated method stub
-		return 0;
+		return userDao.idCheck(userId);
 	}
 
 	@Override
 	public int joinUser(UserDto userDto) throws Exception {
 		// TODO Auto-generated method stub
-		return 0;
+		return userDao.joinUser(userDto);
 	}
 
 	@Override

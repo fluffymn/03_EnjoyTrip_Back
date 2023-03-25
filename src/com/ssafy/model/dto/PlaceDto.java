@@ -2,10 +2,12 @@ package com.ssafy.model.dto;
 
 public class PlaceDto {
 	private int placeNo;
+	private int contentTypeId;
 	private String name;
 	private String address;
 	private double lat;
 	private double lng;
+	private int sido;
 	private String imgUri;
 
 	public int getPlaceNo() {
@@ -14,6 +16,14 @@ public class PlaceDto {
 
 	public void setPlaceNo(int placeNo) {
 		this.placeNo = placeNo;
+	}
+
+	public int getContentTypeId() {
+		return contentTypeId;
+	}
+
+	public void setContentTypeId(int contentTypeId) {
+		this.contentTypeId = contentTypeId;
 	}
 
 	public String getName() {
@@ -46,6 +56,14 @@ public class PlaceDto {
 
 	public void setLng(double lng) {
 		this.lng = lng;
+	}
+
+	public int getSido() {
+		return sido;
+	}
+
+	public void setSido(int sido) {
+		this.sido = sido;
 	}
 
 	public String getImgUri() {
