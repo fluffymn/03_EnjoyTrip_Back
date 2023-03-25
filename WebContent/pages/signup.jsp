@@ -61,6 +61,7 @@
 
     <body>
         <!-- ======= Header ======= -->
+<<<<<<< Updated upstream
         <header id="header" class="fixed-top">
             <div
                 class="container d-flex align-items-center justify-content-between"
@@ -141,6 +142,9 @@
                 <!-- .navbar -->
             </div>
         </header>
+=======
+        <%@ include file="/include/header.jsp"%>
+>>>>>>> Stashed changes
         <!-- End Header -->
         <div class="col-md-8"></div>
         <section class="vw-50">

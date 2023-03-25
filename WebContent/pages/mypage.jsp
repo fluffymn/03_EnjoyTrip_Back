@@ -60,52 +60,7 @@
 
     <body>
         <!-- ======= Header ======= -->
-        <header id="header" class="fixed-top">
-            <div
-                class="container d-flex align-items-center justify-content-between"
-            >
-                <h1 class="logo">
-                    <a href="../index.html"
-                        ><i class="fa-solid fa-plane"></i> Enjoy Trip</a
-                    >
-                </h1>
-                <!-- Uncomment below if you prefer to use an image logo -->
-                <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-                <nav id="navbar" class="navbar">
-                    <ul>
-                        <li>
-                            <a class="nav-link scrollto" href="attractions.html"
-                                >ê´ê´ì§ ììë³´ê¸°</a
-                            >
-                        </li>
-                        <li>
-                            <a class="nav-link scrollto" href="community.html"
-                                >ì»¤ë®¤ëí°</a
-                            >
-                        </li>
-                        <li>
-                            <a class="nav-link scrollto" href="notices.html"
-                                >ê³µì§ì¬í­</a
-                            >
-                        </li>
-                        <li>
-                            <a class="nav-link scrollto" href="mypage.html"
-                                >ë§ì´íì´ì§</a
-                            >
-                        </li>
-                        <li>
-                            <a class="nav-link scrollto" href="signin.html"
-                                >ë¡ê·¸ì¸</a
-                            >
-                        </li>
-                        
-                    </ul>
-                    <i class="bi bi-list mobile-nav-toggle"></i>
-                </nav>
-                <!-- .navbar -->
-            </div>
-        </header>
+        <%@ include file="/include/header.jsp"%>
         <!-- End Header -->
         <section class="vw-100">
             <div>

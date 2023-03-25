@@ -84,13 +84,13 @@ public class UserController extends HttpServlet {
 		String userName = request.getParameter("username");
 		String userPwd = request.getParameter("userpwd");
 
-		UserDao userDto = new UserDto();
+		UserDto userDto = new UserDto();
 		userDto.setUserId(userId);
 		userDto.setUserName(userName);
 		userDto.setUserPwd(userPwd);
 
 		try {
-			int result = userService.join(userDto);
+			int result = userService.joinUser(userDto);
 			if (result == 1) {
 				return "/index.jsp";
 			} else {
@@ -102,19 +102,17 @@ public class UserController extends HttpServlet {
 			request.setAttribute("msg", "회원가입에 실패하였습니다.");
 			return "/error/error.jsp";
 		}
-
-		return null;
 	}
 
 	private String login(HttpServletRequest request, HttpServletResponse response) {
 		String userId = request.getParameter("userid");
 		String userPwd = request.getParameter("userpwd");
 		try {
-			UserDto usetDto = userService.loginUser(userId, userPwd);
-			if (usetDto != null) {
+			UserDto userDto = userService.loginUser(userId, userPwd);
+			if (userDto != null) {
 //				session 설정
 				HttpSession session = request.getSession();
-				session.setAttribute("userinfo", usetDto);
+				session.setAttribute("userinfo", userDto);
 
 //				cookie 설정
 				String idsave = request.getParameter("saveid");
@@ -153,7 +151,7 @@ public class UserController extends HttpServlet {
 		HttpSession session = request.getSession();
 //		session.removeAttribute("userinfo");
 		session.invalidate();
-		return "";
+		return "/index.jsp";
 	}
 
 }

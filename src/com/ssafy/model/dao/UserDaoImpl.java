@@ -52,7 +52,7 @@ public class UserDaoImpl implements UserDao {
 		try {
 			conn = dbUtil.getConnection();
 			StringBuilder sql = new StringBuilder();
-			sql.append("insert into members (userId, userPwd, userName) \n");
+			sql.append("insert into members (user_id, user_password, user_name) \n");
 			sql.append("values (?, ?, ?)");
 			pstmt = conn.prepareStatement(sql.toString());
 			pstmt.setString(1, userDto.getUserId());
