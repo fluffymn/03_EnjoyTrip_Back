@@ -196,14 +196,16 @@
                             <br/>
                             <br/>
                         </div>
-                        <form>
+                        <form id="form-login" method="POST" action="">
+                           <input type="hidden" name="action" value="login" />
                             <!-- Email input -->
                             <div class="form-outline mb-4">
                                 <input
                                     type="text"
-                                    id="form1Example13"
+                                    id="userid"
+                                    name="userid"
                                     class="form-control form-control-lg"
-                                    placeholder="이메일을 입력해주세요."
+                                    placeholder="아이디를 입력해주세요."
                                 />
                                 <label
                                     class="form-label"
@@ -215,7 +217,8 @@
                             <div class="form-outline mb-4">
                                 <input
                                     type="password"
-                                    id="form1Example23"
+                                    id="userpwd"
+                                    name="userpwd"
                                     class="form-control form-control-lg"
                                     placeholder="비밀번호를 입력해주세요."
                                 />
@@ -254,10 +257,10 @@
                                 </button>
                                 <!-- Submit button -->
                                 <button
+                                   id="btn-login"
                                     type="submit"
                                     class="btn btn-primary btn-lg btn-block"
                                     style="background-color: #11C9AA; border-color: #11C9AA;"
-
                                 >
                                     로그인
                                 </button>
@@ -268,6 +271,22 @@
                 </div>
             </div>
         </section>
+        
+        <script>
+         document.querySelector("#btn-login").addEventListener("click", function () {
+           if (!document.querySelector("#userid").value) {
+                alert("아이디 입력!!");
+                return;
+           } else if (!document.querySelector("#userpwd").value) {
+                alert("비밀번호 입력!!");
+                return;
+           } else {
+                let form = document.querySelector("#form-login");
+                form.setAttribute("action", "${root}/user");
+                form.submit();
+           }
+         });
+    </script>
         <!-- End #main -->
 
         <!-- ======= Footer ======= -->
