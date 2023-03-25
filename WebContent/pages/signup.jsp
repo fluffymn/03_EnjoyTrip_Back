@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="root" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -76,27 +77,27 @@
                     <ul>
                         <li>
                             <a class="nav-link scrollto" href="attractions.html"
-                                >ê´ê´ì§ ììë³´ê¸°</a
+                                >관광지 알아보기</a
                             >
                         </li>
                         <li>
                             <a class="nav-link scrollto" href="community.html"
-                                >ì»¤ë®¤ëí°</a
+                                >커뮤니티</a
                             >
                         </li>
                         <li>
                             <a class="nav-link scrollto" href="notices.html"
-                                >ê³µì§ì¬í­</a
+                                >공지사항</a
                             >
                         </li>
                         <li>
                           <a class="nav-link scrollto" href="mypage.html"
-                              >ë§ì´íì´ì§</a
+                              >마이페이지</a
                           >
                         </li>
                         <li>
                             <a class="nav-link scrollto" href="signin.html"
-                                >ë¡ê·¸ì¸</a
+                                >로그인</a
                             >
                         </li>
                         <!-- <li class="dropdown">
@@ -152,86 +153,87 @@
             <div class="container">
                 <div class="input-form-backgroud row">
                   <div class="input-form col-md-5 mx-auto">
-                    <h4 class="mb-4">íìê°ì</h4>
-                    <form class="validation-form" novalidate>
+                    <h4 class="mb-4">회원가입</h4>
+                    <form id="form-signup" class="validation-form" novalidate>
+                      <input type="hidden" name="action" value="join" />
                       <div class="row">
                         <div class="col-md-6 mb-3">
-                          <label for="name">ì´ë¦</label>
-                          <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                          <label for="username">이름</label>
+                          <input type="text" class="form-control" id="username" name="username" placeholder="" value="" required>
                           <div class="invalid-feedback">
-                            ì´ë¦ì ìë ¥í´ì£¼ì¸ì.
+                            이름을 입력해주세요.
                           </div>
                         </div>
                         <div class="col-md-6 mb-3">
-                          <label for="nickname">ë³ëª</label>
+                          <label for="nickname">별명</label>
                           <input type="text" class="form-control" id="nickname" placeholder="" value="" required>
                           <div class="invalid-feedback">
-                            ë³ëªì ìë ¥í´ì£¼ì¸ì.
+                            별명을 입력해주세요.
                           </div>
                         </div>
                       </div>
                       
                       
                       <div class="mb-3">
-                        <label for="email">ì´ë©ì¼</label>
-                        <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+                        <label for="userid">아이디</label>
+                        <input type="userid" class="form-control" id="userid" name="userid" placeholder="userid" required>
                         <div class="invalid-feedback">
-                          ì´ë©ì¼ì ìë ¥í´ì£¼ì¸ì.
+                          아이디를 입력해주세요.
                         </div>
                       </div>
                       
                       <div class="row">
                         <div class="mb-3">
-                          <label for="name">ë¹ë°ë²í¸</label>
-                          <input type="password" class="form-control" id="name" placeholder="" value="" required>
+                          <label for="userpwd">비밀번호</label>
+                          <input type="password" class="form-control" id="userpwd" name="userpwd" placeholder="" value="" required>
                           <div class="invalid-feedback">
-                            ì´ë¦ì ìë ¥í´ì£¼ì¸ì.
+                            비밀번호를 입력해주세요.
                           </div>
                         </div>
                       </div>
                       
                       <div class="mb-3">
-                        <label for="address">ì£¼ì</label>
-                        <input type="text" class="form-control" id="address" placeholder="ìì¸í¹ë³ì ê°ë¨êµ¬" required>
+                        <label for="address">주소</label>
+                        <input type="text" class="form-control" id="address" placeholder="서울특별시 강남구" required>
                         <div class="invalid-feedback">
-                          ì£¼ìë¥¼ ìë ¥í´ì£¼ì¸ì.
+                          주소를 입력해주세요.
                         </div>
                       </div>
             
                       <div class="mb-3">
-                        <label for="address2">ìì¸ì£¼ì<span class="text-muted">&nbsp;(íì ìë)</span></label>
-                        <input type="text" class="form-control" id="address2" placeholder="ìì¸ì£¼ìë¥¼ ìë ¥í´ì£¼ì¸ì.">
+                        <label for="address2">상세주소<span class="text-muted">&nbsp;(필수 아님)</span></label>
+                        <input type="text" class="form-control" id="address2" placeholder="상세주소를 입력해주세요.">
                       </div>
             
                       <div class="row">
                         <div class="col-md-8 mb-3">
-                          <label for="root">ê°ì ê²½ë¡</label>
+                          <label for="root">가입 경로</label>
                           <select class="custom-select d-block w-100" id="root">
                             <option value=""></option>
-                            <option>ê²ì</option>
-                            <option>ì¹´í</option>
+                            <option>검색</option>
+                            <option>카페</option>
                           </select>
                           <div class="invalid-feedback">
-                            ê°ì ê²½ë¡ë¥¼ ì íí´ì£¼ì¸ì.
+                            가입 경로를 선택해주세요.
                           </div>
                         </div>
                         <div class="col-md-4 mb-3">
-                          <label for="code">ì¶ì²ì¸ ì½ë</label>
+                          <label for="code">추천인 코드</label>
                           <input type="text" class="form-control" id="code" placeholder="" required>
                           <div class="invalid-feedback">
-                            ì¶ì²ì¸ ì½ëë¥¼ ìë ¥í´ì£¼ì¸ì.
+                            추천인 코드를 입력해주세요.
                           </div>
                         </div>
                       </div>
                       <hr class="mb-4">
                       <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="aggrement" required>
-                        <label class="custom-control-label" for="aggrement">ê°ì¸ì ë³´ ìì§ ë° ì´ì©ì ëìí©ëë¤.</label>
+                        <label class="custom-control-label" for="aggrement">개인정보 수집 및 이용에 동의합니다.</label>
                       </div>
                       <div class="mb-4"></div>
-                      <button class="btn btn-primary btn-lg btn-block" type="submit"
+                      <button id="btn-signup" class="btn btn-primary btn-lg btn-block" type="submit"
                               style="background-color: #11C9AA; border-color: #11C9AA;">
-                        ê°ìíê¸°
+                        가입하기
                       </button>
                     </form>
                   </div>
@@ -252,6 +254,12 @@
                     }, false);
                   });
                 }, false);
+
+                document.querySelector("#btn-signup").addEventListener("click", function () {
+                  let form = document.querySelector("#form-signup");
+                  form.setAttribute("action", "${root}/user");
+                  form.submit();
+                });
               </script>
         </section>
         <!-- End #main -->

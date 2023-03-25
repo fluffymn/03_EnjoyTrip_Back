@@ -79,6 +79,30 @@ public class UserController extends HttpServlet {
 		// TODO : 이름, 아이디, 비밀번호, 이메일등 회원정보를 받아 MemberDto로 setting.
 		// TODO : 위의 데이터를 이용하여 service의 joinMember() 호출.
 		// TODO : 정상 등록 후 로그인 페이지로 이동.
+
+		String userId = request.getParameter("userid");
+		String userName = request.getParameter("username");
+		String userPwd = request.getParameter("userpwd");
+
+		UserDao userDto = new UserDto();
+		userDto.setUserId(userId);
+		userDto.setUserName(userName);
+		userDto.setUserPwd(userPwd);
+
+		try {
+			int result = userService.join(userDto);
+			if (result == 1) {
+				return "/index.jsp";
+			} else {
+				request.setAttribute("msg", "회원가입에 실패하였습니다.");
+				return "/user/login.jsp";
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			request.setAttribute("msg", "회원가입에 실패하였습니다.");
+			return "/error/error.jsp";
+		}
+
 		return null;
 	}
 
