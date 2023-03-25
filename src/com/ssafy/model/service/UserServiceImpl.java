@@ -10,7 +10,7 @@ public class UserServiceImpl implements UserService {
 	private UserDao userDao;
 
 	private UserServiceImpl() {
-		userDao = UserDaoImpl.getMemberDao();
+		userDao = UserDaoImpl.getUserDao();
 	}
 
 	public static UserService getMemberService() {

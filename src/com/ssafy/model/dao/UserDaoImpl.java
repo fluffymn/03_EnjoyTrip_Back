@@ -17,7 +17,7 @@ public class UserDaoImpl implements UserDao {
 		dbUtil = DBUtil.getInstance();
 	}
 
-	public static UserDao getMemberDao() {
+	public static UserDao getUserDao() {
 		return userDao;
 	}
 
