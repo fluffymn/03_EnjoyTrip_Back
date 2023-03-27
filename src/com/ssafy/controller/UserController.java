@@ -138,7 +138,7 @@ public class UserController extends HttpServlet {
 				return "/index.jsp";
 			} else {
 				request.setAttribute("msg", "아이디 또는 비밀번호 확인 후 다시 로그인하세요.");
-				return "/user/login.jsp";
+				return "/pages/signin.jsp"; // TODO
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

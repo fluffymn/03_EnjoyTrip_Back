@@ -19,7 +19,7 @@
               >
             </li>
             <li>
-              <a class="nav-link scrollto" href="${root }/pages/community.jsp"
+              <a class="nav-link scrollto" href="${root }/article?action=list"
                 >커뮤니티</a
               >
             </li>

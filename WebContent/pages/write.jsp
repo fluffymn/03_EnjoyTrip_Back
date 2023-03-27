@@ -45,7 +45,91 @@
                 <!-- End Header -->
 
                 <main id="main">
-
+				<section class="page-section" id="contact">
+            <div class="container">
+                <!-- Contact Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+                    여행 정보 공유
+                </h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Contact Section Form-->
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-xl-7">
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- * * SB Forms Contact Form * *-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- This form is pre-integrated with SB Forms.-->
+                        <!-- To make this form functional, sign up at-->
+                        <!-- https://startbootstrap.com/solution/contact-forms-->
+                        <!-- to get an API token!-->
+                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            
+                            <!-- Title input-->
+                            <div class="form-floating mb-3">
+                                <input
+                                    class="form-control"
+                                    id="title"
+                                    type="text"
+                                    placeholder="Enter your title..."
+                                    data-sb-validations="required"
+                                />
+                                <label for="title">Title</label>
+                                <div class="invalid-feedback" data-sb-feedback="title:required">
+                                    A title is required.
+                                </div>
+                            </div>
+                            <!-- Content input-->
+                            <div class="form-floating mb-3">
+                                <textarea
+                                    class="form-control"
+                                    id="content"
+                                    type="text"
+                                    placeholder="Enter your content here..."
+                                    style="height: 10rem"
+                                    data-sb-validations="required"
+                                ></textarea>
+                                <label for="content">Content</label>
+                                <div class="invalid-feedback" data-sb-feedback="content:required">
+                                    A content is required.
+                                </div>
+                            </div>
+                            <!-- Submit success message-->
+                            <!---->
+                            <!-- This is what your users will see when the form-->
+                            <!-- has successfully submitted-->
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">Form submission successful!</div>
+                                </div>
+                            </div>
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the form-->
+                            <div class="d-none" id="submitErrorMessage">
+                                <div class="text-center text-danger mb-3">
+                                    Error sending message!
+                                </div>
+                            </div>
+                            <!-- Submit Button-->
+                            <button
+                                class="btn btn-primary btn-xl disabled"
+                                id="submitButton"
+                                type="button"
+                                onclick="boardSubmit()"
+                            >
+                                Send
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
                 </main>
                 <!-- End #main -->
 

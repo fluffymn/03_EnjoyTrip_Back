@@ -42,7 +42,7 @@ public class BoardController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String action = request.getParameter("action");
-		
+		System.out.println("article + " + action);
 		pgno = ParameterCheck.notNumberToOne(request.getParameter("pgno"));
 		key = ParameterCheck.nullToBlank(request.getParameter("key"));
 		word = ParameterCheck.nullToBlank(request.getParameter("word"));
@@ -56,7 +56,7 @@ public class BoardController extends HttpServlet {
 			path = view(request, response);
 			forward(request, response, path);
 		} else if ("mvwrite".equals(action)) {
-			path = "/board/write.jsp";
+			path = "/pages/write.jsp";
 			redirect(request, response, path);
 		} else if ("write".equals(action)) {
 			path = write(request, response);
@@ -103,19 +103,20 @@ public class BoardController extends HttpServlet {
 				map.put("word", word);
 				
 				List<BoardDto> list = boardService.listArticle(map);
+				System.out.println(list.size());
 				request.setAttribute("articles", list);
 				
 				PageNavigation pageNavigation = boardService.makePageNavigation(map);
 				request.setAttribute("navigation", pageNavigation);
 
-				return "/board/list.jsp" + queryStrig;
+				return "/pages/community.jsp" + queryStrig;
 			} catch (Exception e) {
 				e.printStackTrace();
 				request.setAttribute("msg", "글목록 출력 중 문제 발생!!!");
 				return "/error/error.jsp";
 			}
 		} else
-			return "/user/login.jsp";
+			return "/pages/signin.jsp";
 	}
 
 	private String view(HttpServletRequest request, HttpServletResponse response) {

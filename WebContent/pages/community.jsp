@@ -45,7 +45,19 @@
                 <!-- End Header -->
 
                 <main id="main">
-
+					<table>
+					<c:forEach items="${articles }" var="article">
+					<tr>
+						<td>${article.getArticleNo() }</td>
+						<td>${article.getSubject() }</td>
+						<td>${article.getUserId() }</td>
+					</tr>
+					</c:forEach>
+					</table>
+					
+					<a href="${root }/article?action=mvwrite"
+                >글작성</a
+              >
                 </main>
                 <!-- End #main -->
 
