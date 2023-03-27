@@ -65,7 +65,7 @@
             <option value="38">쇼핑</option>
             <option value="39">음식점</option>
           </select> -->
-              <input id="search-keyword" class="form-control me-2" type="search" placeholder="검색어" aria-label="검색어" />
+              <input id="search-keyword" class="form-control me-2" name="keyword" type="search" placeholder="검색어" aria-label="검색어" />
               <!-- <button id="btn-search" class="btn btn-outline-success" type="button">
             검색
           </button> -->
