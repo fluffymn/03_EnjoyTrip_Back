@@ -67,61 +67,37 @@
                         <!-- To make this form functional, sign up at-->
                         <!-- https://startbootstrap.com/solution/contact-forms-->
                         <!-- to get an API token!-->
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            
+                        <form id="contactForm" method="post">
+                            <input type="hidden" name="action" value="write">
                             <!-- Title input-->
                             <div class="form-floating mb-3">
                                 <input
                                     class="form-control"
                                     id="title"
+                                    name="subject"
                                     type="text"
                                     placeholder="Enter your title..."
-                                    data-sb-validations="required"
                                 />
                                 <label for="title">Title</label>
-                                <div class="invalid-feedback" data-sb-feedback="title:required">
-                                    A title is required.
-                                </div>
                             </div>
                             <!-- Content input-->
                             <div class="form-floating mb-3">
                                 <textarea
                                     class="form-control"
                                     id="content"
+                                    name="content"
                                     type="text"
                                     placeholder="Enter your content here..."
                                     style="height: 10rem"
-                                    data-sb-validations="required"
                                 ></textarea>
                                 <label for="content">Content</label>
-                                <div class="invalid-feedback" data-sb-feedback="content:required">
-                                    A content is required.
-                                </div>
-                            </div>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Form submission successful!</div>
-                                </div>
-                            </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class="d-none" id="submitErrorMessage">
-                                <div class="text-center text-danger mb-3">
-                                    Error sending message!
-                                </div>
                             </div>
                             <!-- Submit Button-->
+                                                            <!-- class="btn btn-primary btn-xl"  -->
                             <button
-                                class="btn btn-primary btn-xl disabled"
+
                                 id="submitButton"
-                                type="button"
-                                onclick="boardSubmit()"
+                                type="submit"
                             >
                                 Send
                             </button>
@@ -132,6 +108,22 @@
         </section>
                 </main>
                 <!-- End #main -->
+                
+                <script>
+         document.querySelector("#submitButton").addEventListener("click", function () {
+           if (!document.querySelector("#title").value) {
+                alert("제목 입력!!");
+                return;
+           } else if (!document.querySelector("#content").value) {
+                alert("내용 입력!!");
+                return;
+           } else {
+                let form = document.querySelector("#contactForm");
+                form.setAttribute("action", "${root}/article");
+                form.submit();
+           }
+         });
+    </script>
 
                 <!-- ======= Footer ======= -->
                 <footer id="footer">
