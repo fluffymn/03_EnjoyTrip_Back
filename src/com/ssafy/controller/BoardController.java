@@ -60,8 +60,8 @@ public class BoardController extends HttpServlet {
 			redirect(request, response, path);
 		} else if ("write".equals(action)) {
 			path = write(request, response);
-//			redirect(request, response, path);
-			forward(request, response, path);
+			redirect(request, response, path);
+//			forward(request, response, path);
 		} else if ("mvmodify".equals(action)) {
 			path = mvModify(request, response);
 			forward(request, response, path);
@@ -129,7 +129,7 @@ public class BoardController extends HttpServlet {
 				boardService.updateHit(articleNo);
 				request.setAttribute("article", boardDto);
 
-				return "/board/view.jsp";
+				return "/pages/view.jsp";
 			} catch (Exception e) {
 				e.printStackTrace();
 				request.setAttribute("msg", "글내용 출력 중 문제 발생!!!");
@@ -169,7 +169,7 @@ public class BoardController extends HttpServlet {
 			BoardDto boardDto = boardService.getArticle(articleNo);
 			request.setAttribute("article", boardDto);
 			
-			return "/board/modify.jsp";
+			return "/pages/write.jsp";
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -188,8 +188,8 @@ public class BoardController extends HttpServlet {
 		
 		try {
 			boardService.modifyArticle(boardDto);
-//			return "/board/view.jsp";
-			return "/index.jsp";
+			return "/article?action=list";
+//			return "/index.jsp";
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -207,7 +207,7 @@ public class BoardController extends HttpServlet {
 		
 		try {
 			boardService.deleteArticle(articleNo);
-			return "/index.jsp";
+			return "/article?action=list";
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
